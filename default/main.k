@@ -3,21 +3,21 @@ import service
 import service.container as c
 import network as n
 
-# main.k declares the customized configuration codes for default stack. 
-quickstart: ac.AppConfiguration {
+helloworld: ac.AppConfiguration {
     workload: service.Service {
         containers: {
-            quickstart: c.Container {
-                image: "kusionstack/kusion-quickstart:latest"
+            "helloworld": c.Container {
+                image = "kusionstack/kusion-quickstart:"
             }
         }
+        replicas: 2
     }
     accessories: {
         "network": n.Network {
             ports: [
-                n.Port {
-                    port: 8080
-                }
+              n.Port {
+                  port: 80
+              }
             ]
         }
     }
