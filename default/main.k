@@ -7,7 +7,7 @@ helloworld: ac.AppConfiguration {
     workload: service.Service {
         containers: {
             "helloworld": c.Container {
-                image = "kusionstack/kusion-quickstart:latest"
+                image = "nginx:latest"
             }
         }
         replicas: 2
